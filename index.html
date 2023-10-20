@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class notes</title>
+  </head>
+  <body>
+    <h1>Computer u1sage</h1>
+    <div id="users"></div>
+    <script>
+      var usage = [
+        { name: "chris", computer: "mac" },
+        { name: "shane", computer: "windows" },
+      ];
+      function populateUsers() {
+        var users = document.getElementById("users");
+        usage.forEach((user) => {
+          var newLine = document.createElement("div");
+          newLine.innerText = user.name + " uses " + user.computer;
+          newLine.onclick = () => alert("click me" + user.name);
+          users.appendChild(newLine); //Add as a child into users
+        });
+      }
+      populateUsers();
+    </script>
+  </body>
+</html>
